@@ -1,4 +1,5 @@
 import { HiOutlineMenuAlt1 } from 'react-icons/hi'
+import { Link } from 'wouter'
 import {
   BiHeart,
   GoLocation,
@@ -9,16 +10,14 @@ import {
 } from 'react-icons/all'
 import { Container, Button, Nav, NavItem } from './styles'
 import { useState } from 'react'
-import { useLocation } from 'wouter'
 
 function Header() {
   const [active, setActive] = useState(false)
-  const [location, setLocation] = useLocation()
   const handleActive = () => setActive(!active)
 
   return (
     <Container>
-      {active ? (
+      {!active ? (
         <Button onClick={handleActive}>
           <HiOutlineMenuAlt1 size={24} />
         </Button>
@@ -30,9 +29,11 @@ function Header() {
           <NavItem>
             <GoLocation size={24} />
           </NavItem>
-          <NavItem>
-            <BiSearch size={24} onClick={() => setLocation('/search')}/>
-          </NavItem>
+          <Link to='/search'>
+            <NavItem>
+              <BiSearch size={24} />
+            </NavItem>
+          </Link>
           <NavItem>
             <BiHeart size={24} />
           </NavItem>

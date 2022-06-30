@@ -9,7 +9,7 @@ import {
 } from './styles'
 import { GoLocation } from 'react-icons/go'
 
-function Resume() {
+function Resume({ name, country, temp }) {
   return (
     <Card>
       <CardHeader>
@@ -17,12 +17,14 @@ function Resume() {
         <CardText>Sat, 3 aug</CardText>
       </CardHeader>
       <CardBody>
-        <CardTitle fontSize="8rem">24°</CardTitle>
+        <CardTitle fontSize='8rem'>{temp}°</CardTitle>
         <CardIcon src='/icons/sunny.svg'></CardIcon>
       </CardBody>
       <CardFooter>
-        <GoLocation size={17}/>
-        <CardText>Argentina, Buenos aires</CardText>
+        <GoLocation size={17} />
+        <CardText>
+          {country}, {name}
+        </CardText>
       </CardFooter>
     </Card>
   )

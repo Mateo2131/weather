@@ -1,8 +1,12 @@
 import Form from '@/components/Form'
+import Menu from '@/components/Menu'
 
 function Search () {
   return (
-    <Form />
+    <>
+      <Menu />
+      <Form />
+    </>
   )
 }
 
