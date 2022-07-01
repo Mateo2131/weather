@@ -32,7 +32,10 @@ function Form() {
   return (
     <>
       <FormContainer onSubmit={handleSubmit}>
-        <Input placeholder='Search' onChange={handleChange} />
+        <Input
+          placeholder='Type here (min. 4 letters)'
+          onChange={handleChange}
+        />
       </FormContainer>
       <ResultList>
         {result.map((item) => (

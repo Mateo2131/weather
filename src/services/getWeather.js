@@ -10,6 +10,7 @@ async function getWeather(query) {
     return {
       time: hour.time.slice(11, 16),
       temp: hour.temp_c,
+      rain: hour.chance_of_rain
     }
   })
 
