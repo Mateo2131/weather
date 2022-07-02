@@ -1,16 +1,19 @@
 import { Route } from 'wouter'
-import Home from './pages/Home'
-import { CurrentLocationProvider } from './context/currentLocation'
-import Search from './pages/Search'
+import { ChakraProvider } from '@chakra-ui/react'
+import theme from '@/themes'
+
+import Home from '@/pages/Home'
+import Search from '@/pages/Search'
+import { CurrentLocation } from './context/currentLocation'
 
 function App() {
   return (
-    <div className='App'>
-      <CurrentLocationProvider>
+    <ChakraProvider theme={theme}>
+      <CurrentLocation>
         <Route path='/' component={Home} />
         <Route path='/search' component={Search} />
-      </CurrentLocationProvider>
-    </div>
+      </CurrentLocation>
+    </ChakraProvider>
   )
 }
 

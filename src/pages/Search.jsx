@@ -1,12 +1,11 @@
-import Form from '@/components/Form'
-import Menu from '@/components/Menu'
+import Index from '@/components/Form'
+import { Box } from '@chakra-ui/react'
 
-function Search () {
+function Search() {
   return (
-    <>
-      <Menu />
-      <Form />
-    </>
+    <Box p={2} maxW='480px' mx='auto' minH='100vh'>
+      <Index />
+    </Box>
   )
 }
 

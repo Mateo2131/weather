@@ -1,12 +1,14 @@
-import { FormContainer, Input } from './styles'
-import { API_KEY, API_URL } from '@/services/config'
+import PrimaryBtn from '@/common/primaryBtn'
 import { useState, useEffect } from 'react'
-import ResultList from '@/components/ResultList'
-import ResultItem from '@/components/ResultItem'
+import { API_URL, API_KEY } from '@/services/config'
+import { RiArrowGoBackFill } from 'react-icons/ri'
+import { Link } from 'wouter'
+import { Input, Box } from '@chakra-ui/react'
+import SearchItem from '@/components/SearchItem'
 
-function Form() {
+function Index() {
   const [keyword, setKeyword] = useState('')
-  const [result, setResult] = useState([])
+  const [option, setOption] = useState([])
 
   useEffect(() => {
     if (keyword.length >= 4) {
@@ -21,29 +23,31 @@ function Form() {
               region: item.region
             }
           })
-          setResult(data)
+          setOption(data)
         })
     }
   }, [keyword])
 
-  const handleSubmit = (e) => e.preventDefault()
   const handleChange = (e) => setKeyword(e.target.value)
 
   return (
     <>
-      <FormContainer onSubmit={handleSubmit}>
-        <Input
-          placeholder='Type here (min. 4 letters)'
-          onChange={handleChange}
-        />
-      </FormContainer>
-      <ResultList>
-        {result.map((item) => (
-          <ResultItem data={item} key={item.id} />
-        ))}
-      </ResultList>
+      <Link to='/'>
+        <PrimaryBtn icon={<RiArrowGoBackFill />} label='Back' />
+      </Link>
+      <Input
+        placeholder='Type here (min. 4 letters)'
+        onChange={handleChange}
+        mt='10px'
+        size='lg'
+      />
+      <Box mt='10px'>
+        {option.map((item) => {
+          return <SearchItem data={item} key={item.id} />
+        })}
+      </Box>
     </>
   )
 }
 
-export default Form
+export default Index

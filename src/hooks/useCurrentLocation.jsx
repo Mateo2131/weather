@@ -2,7 +2,7 @@ import { useEffect, useContext, useState } from 'react'
 import Context from '@/context/currentLocation'
 import getWeather from '@/services/getWeather'
 
-function useLocation() {
+function useCurrentLocation() {
   const { location, current } = useContext(Context)
   const [loading, setLoading] = useState(false)
   const [city, setCity] = location
@@ -11,13 +11,13 @@ function useLocation() {
   useEffect(() => {
     setLoading(true)
     getWeather(city)
-      .then((res) => {
+      .then(res => {
         setWeather(res)
         setLoading(false)
       })
   }, [city])
 
-  return { weather, loading }
+  return { loading, weather, setCity }
 }
 
-export default useLocation
+export default useCurrentLocation

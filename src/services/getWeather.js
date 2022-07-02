@@ -10,6 +10,7 @@ async function getWeather(query) {
     return {
       time: hour.time.slice(11, 16),
       temp: hour.temp_c,
+      icon: hour.condition.icon,
       rain: hour.chance_of_rain
     }
   })
@@ -21,6 +22,9 @@ async function getWeather(query) {
     temp: current.temp_c,
     wind: current.wind_kph,
     humidity: current.humidity,
+    uv: current.uv,
+    vis_km: current.vis_km,
+    icon: current.condition.icon,
   }
 
   return { info, TodayForecast }

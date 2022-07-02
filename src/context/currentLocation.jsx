@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 
 const Context = React.createContext()
 
-export function CurrentLocationProvider({ children }) {
-  const [city, setCity] = useState('Buenos Aires')
+export function CurrentLocation({ children }) {
+  const [location, setLocation] = useState('London')
   const [weather, setWeather] = useState({
     info: {
       temp: 0,
@@ -16,7 +16,7 @@ export function CurrentLocationProvider({ children }) {
   return (
     <Context.Provider
       value={{
-        location: [city, setCity],
+        location: [location, setLocation],
         current: [weather, setWeather]
       }}
     >
