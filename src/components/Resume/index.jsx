@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react'
 import { GoLocation } from 'react-icons/go'
 
-function Index({ name, country, temp, icon }) {
+function Index({ name, country, temp, icon, date }) {
   const border = useColorModeValue('border.light', 'border.dark')
   return (
     <Grid
@@ -24,7 +24,7 @@ function Index({ name, country, temp, icon }) {
         <Heading as='h3' fontSize='24px' fontWeight='500'>
           Today
         </Heading>
-        <Text fontSize='15px'>Sat, 3 aug</Text>
+        <Text fontSize='15px'>{date}</Text>
       </Flex>
       <Flex justifyContent='space-between' alignItems='center'>
         <Text fontSize='70px'>{temp}°</Text>
