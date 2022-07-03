@@ -2,7 +2,7 @@
 
 Application that shows the current weather in your location
 
-# Technologies Used
+# Technologies
 
 - [React](https://reactjs.org/)
 - [JavaScript](https://www.javascript.com/)
@@ -11,7 +11,7 @@ Application that shows the current weather in your location
 
 # Features
 
-- Curren day weather data
+- Current day weather data
 - Current day data by hour
 - Search for a city
 - Dark mode
