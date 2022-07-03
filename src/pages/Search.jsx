@@ -1,11 +1,11 @@
 import Index from '@/components/Form'
-import { Box } from '@chakra-ui/react'
+import Container from '@/common/container'
 
 function Search() {
   return (
-    <Box p={2} maxW='480px' mx='auto' minH='100vh'>
+    <Container>
       <Index />
-    </Box>
+    </Container>
   )
 }
 

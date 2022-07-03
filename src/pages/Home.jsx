@@ -4,7 +4,7 @@ import Tabs from '@/components/Tabs'
 import Loader from '@/components/Loader'
 import Details from '@/components/Details'
 import Footer from '@/components/Footer'
-import { Box } from '@chakra-ui/react'
+import Container from '@/common/container'
 import useCurrentLocation from '@/hooks/useCurrentLocation'
 import getTodayDate from '@/services/getTodayDate'
 
@@ -14,7 +14,7 @@ function Home() {
   const date = getTodayDate()
 
   return (
-    <Box p={2} maxW='480px' mx='auto' minH='100vh'>
+    <Container>
       {loading ? (
         <Loader />
       ) : (
@@ -37,7 +37,7 @@ function Home() {
         </>
       )}
       <Footer />
-    </Box>
+    </Container>
   )
 }
 
