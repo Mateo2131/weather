@@ -18,7 +18,8 @@ Application that shows the current weather in your location
 
 # Installation
 
-- Go to the project folder
+- Go to the services folder and create a file called config.js
+- Replace the constants with your own values
 - Run the following commands
 ```
 npm install
